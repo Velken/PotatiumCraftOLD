@@ -1,6 +1,7 @@
 package com.velkent.potatiumcraft;
 
 import com.velkent.potatiumcraft.handler.ConfigurationHandler;
+import com.velkent.potatiumcraft.init.ModBlocks;
 import com.velkent.potatiumcraft.init.ModItems;
 import com.velkent.potatiumcraft.proxy.IProxy;
 import com.velkent.potatiumcraft.reference.Reference;
@@ -26,7 +27,11 @@ public class PotatiumCraft
     {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+
         ModItems.init();
+
+        ModBlocks.init();
+
         LogHelper.info("Pre Initialization Complete!");
     }
 
